@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { BbcArticlesService } from '../bbc-articles.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app-bbc-articles',
+  templateUrl: './bbc-articles.component.html',
+  styleUrls: ['./bbc-articles.component.css'],
 })
-export class AppComponent {
-  title = 'bbc-web-crawler-frontend';
+export class BbcArticlesComponent implements OnInit {
+  data: any[] = [];
+
+  constructor(private bbcService: BbcArticlesService) {}
+
+  ngOnInit(): void {
+    this.bbcService.getArticles().subscribe((data) => {
+      this.data = data;
+    });
+  }
 }
