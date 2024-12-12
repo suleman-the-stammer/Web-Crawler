@@ -7,7 +7,7 @@ import { BbcArticlesService } from '../bbc-articles.service';
   styleUrls: ['./bbc-articles.component.css'],
 })
 export class BbcArticlesComponent implements OnInit {
-  data: any[] = [];
+  data: unknown[] = [];
 
   constructor(private bbcService: BbcArticlesService) {}
 
