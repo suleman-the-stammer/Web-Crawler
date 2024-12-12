@@ -10,7 +10,7 @@ export class BbcArticlesService {
 
   constructor(private http: HttpClient) {}
 
-  getArticles(): Observable<any[]> {
+  getArticles(): Observable<unknown[]> {
     return this.http.get<unknown[]>(this.apiUrl);
   }
 }
