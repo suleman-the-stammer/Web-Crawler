@@ -11,6 +11,6 @@ export class BbcArticlesService {
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
+    return this.http.get<unknown[]>(this.apiUrl);
   }
 }
